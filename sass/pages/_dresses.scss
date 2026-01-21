@@ -1,0 +1,89 @@
+@import "../main/color";
+@import "../main/flex";
+@import "../main/fonts";
+@import "../main/general";
+@import "../layout/filter";
+
+body {
+    background-color: $base-color;
+}
+
+.dresses__container {
+    @include flex(row, center);
+    align-content: flex-start;
+    flex-wrap: wrap;
+    .dresses__div {
+        @include flex(column, center);
+        color: $base-color;
+        margin: 1rem;
+        width:auto;
+        img {
+            width: 25rem;
+            margin: 1rem;
+        }
+        .dresses__title {@include font(1.5rem); color: $dark; margin: .2rem 0rem;}
+        .dresses__price {@include font(1rem); color: $dark;}
+        button {
+            @include font(1.5rem);
+            border: 0rem;
+            border-radius: 5%;
+            background-color: $beige;
+            color: $secondary-color;
+            padding: .5rem;
+            transition: 1s;
+            margin:.1rem 0rem 1.6rem 0rem;
+            &:hover{color: $dark;
+                box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, .2);
+            } &:active{
+                box-shadow: inset -1px -1px 6px rgba(105, 93, 66, 0.52);
+            }
+        };
+    }
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 600px) {
+    .dresses__container {
+        @include flex(row, center);
+        align-content: flex-start;
+        flex-wrap: wrap;
+        .dresses__div {
+            margin: 1rem;
+            img {
+                width: 11rem;
+                margin: .5rem;
+            }
+            .dresses__title {@include font(1.3rem);  margin: .2rem 0rem;}
+            .dresses__price {@include font(1rem);}
+            button {
+                @include font(1.3rem);
+                padding: .2rem;
+                margin: 0rem;
+            };
+        }
+    }
+
+}
+
+/* TABLET */
+
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+    .dresses__container {
+        @include flex(row, center);
+        align-content: flex-start;
+        flex-wrap: wrap;
+        .dresses__div {
+            margin: 1rem;
+            img {
+                width: 15rem;
+                margin: .5rem;
+            }
+            button {
+                @include font(1.5rem);
+                padding: .2rem;
+                margin: 0rem;
+            };
+        }
+    }
+}

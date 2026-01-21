@@ -1,0 +1,217 @@
+@import "../main/color";
+@import "../main/flex";
+@import "../main/fonts";
+@import "../main/general";
+
+/* Footer container */
+
+.footer {
+    background-color: $secondary-color;
+    margin-top:6rem;
+    padding: 1rem 0rem;
+    .footer__container{
+        @include flex(row, space-around);
+    }
+}
+
+/* Logo */
+
+.footer__div {
+    @include flex(row,flex-start);
+    .footer__logo {
+        @include font (3rem);
+        color:$base-color;
+        margin-left: 6rem;
+    }
+}
+
+/* Social Media */
+
+.footer__media{
+    @include flex2(column, center, flex-start);
+    .footer__media--title {
+        @include font(1.5rem);
+        letter-spacing: .1rem;
+        color: $beige;
+    }
+    .footer__media2{
+        @include flex2(row, center, flex-start);
+        padding-left: 0rem;
+        li {
+            @include font(1.2rem);
+            a{  color:$beige;
+                text-decoration:none;
+                    &:hover {color:$base-color;}
+                    i{
+                        font-size: 3rem;
+                        margin:1rem 2rem 1rem 0rem;
+                    }
+            }
+        }
+    }
+}
+
+
+/* Orders and Returns */
+
+.footer__return{
+    @include flex2(column, flex-start, flex-start);
+    .footer__return--title {
+        @include font(1.5rem);
+        letter-spacing: .1rem;
+        color: $beige;
+    }
+    li {
+        @include font(1.2rem);
+        a{  color:$beige;
+            text-decoration:none;
+                &:hover {color:$base-color;}
+        }
+    }
+}
+
+/* Help */
+
+.footer__help {
+    @include flex2(column, flex-start, flex-start);
+    .footer__help--title {
+        @include font(1.5rem);
+        letter-spacing: .1rem;
+        color: $beige;
+    }
+    li {
+        @include font(1.2rem);
+        a{  color:$beige;
+            text-decoration:none;
+                &:hover {color:$base-color;}
+        }
+    }
+}
+
+/* Created by */
+
+.created {
+    background-color: $base-color;
+    .col {
+        @include flex (row, center);
+        p{
+            @include font(1rem);
+            color: $dark;
+            padding: 1rem;
+            a{color: $dark;
+            &:visited {color:$pink;}}
+        }
+    }
+
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 600px) {
+    
+.footer {
+    background-color: $secondary-color;
+    margin-top:1rem;
+    padding: 1rem 0rem;
+    .footer__container{
+        @include flex2(column, flex-start, flex-start);
+    }
+}
+
+/* Logo */
+
+.footer__div {
+    @include flex(row,flex-start);
+    width:99vw;
+    .footer__logo {
+        @include font (2.2rem);
+        padding: 2rem;
+        margin: auto;
+    }
+}
+
+/* Social Media */
+
+.footer__media{
+    width:99vw;
+    @include flex2(column, center, flex-start);
+    .footer__media--title {@include font(1.2rem);color: $base-color;}
+    .footer__media2{
+        li {@include font(1rem);
+            a{ i{
+                font-size: 2rem;
+                margin:.5rem 1rem .5rem 0rem;
+            }}
+        }
+    }
+}
+
+
+/* Orders and Returns */
+
+.footer__return{
+    width:99vw;
+    .footer__return--title {@include font(1.2rem); color: $base-color;}
+    li {@include font(1rem);}
+}
+
+/* Help */
+
+.footer__help {
+    width:99vw;
+    .footer__help--title {@include font(1.2rem);color: $base-color;}
+    li {@include font(1rem);}
+}
+}
+
+/* TABLET */
+
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+    .footer {
+        background-color: $secondary-color;
+        margin-top:1rem;
+        padding: 1rem 0rem;
+        .footer__container{
+            @include flex(row, flex-start);
+        }
+    }
+    
+    /* Logo */
+    
+    .footer__div {
+        @include flex(row,flex-start);
+        .footer__logo {
+            @include font (2.2rem);
+            margin: auto;
+        }
+    }
+    
+    /* Social Media */
+    
+    .footer__media{
+        @include flex2(column, center, flex-start);
+        .footer__media--title {@include font(1.2rem);color: $base-color;}
+        .footer__media2{
+            li {@include font(1.2rem);
+                a{ i{
+                    font-size: 2.3rem;
+                    margin:.5rem 1rem .5rem 0rem;
+                }}
+            }
+        }
+    }
+    
+    /* Orders and Returns */
+    
+    .footer__return{
+        .footer__return--title {@include font(1.2rem); color: $base-color;}
+        li {@include font(1rem);}
+    }
+    
+    /* Help */
+    
+    .footer__help {
+        .footer__help--title {@include font(1.2rem);color: $base-color;}
+        li {@include font(1rem);}
+    }
+}
